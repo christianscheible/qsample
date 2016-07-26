@@ -12,8 +12,8 @@ Java JVM (>= 1.7) and Maven (>= 3.0.0) need to be installed. All other
 dependencies will be downloaded automatically.
 
 
-Usage
------
+Setup
+--------
 
 Install the tool by running the following commands:
 
@@ -29,6 +29,10 @@ Next, download and unpack the pre-trained models:
 
 	wget https://github.com/christianscheible/qsample/releases/download/0.1/models.tar.gz
 	tar xzfv models.tar.gz
+
+
+Usage
+-----
 
 Now we are ready to detect quotations. The following line runs the tool
 on some example documents (plain text, one document per file):
