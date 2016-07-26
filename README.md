@@ -25,8 +25,13 @@ Install the tool by running the following commands:
 If the build was successful, you will find two .jar files in `target/`
 (with and without dependencies, respectively).
 
-The following line runs the tool on some example documents (plain text,
-one document per file):
+Next, download and unpack the pre-trained models:
+
+	wget https://github.com/christianscheible/qsample/releases/download/0.1/models.tar.gz
+	tar xzfv models.tar.gz
+
+Now we are ready to detect quotations. The following line runs the tool
+on some example documents (plain text, one document per file):
 
 	java -jar target/qsample-0.1-jar-with-dependencies.jar --sample example/documents/ output
 
