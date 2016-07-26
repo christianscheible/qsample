@@ -1,0 +1,84 @@
+# Properties file to replicate the ACL 2016 greedy results
+# To run this, please set the following paths first:
+#   path for writing output
+outputDirectory=/path/to/output
+#   path to PARC3
+parcRoot=/path/to/PARC3_complete
+#   path to PTB raw data
+pdtbWsjRawDirectory=/path/to/treebank2/raw/wsj/
+#   path to BBN named entities
+bbnPath=/path/to/bbn-pcet/data/WSJtypes-subtypes/
+#   path for caching CoreNLP output (optional, see below)
+coreNlpOutputDirectory=/tmp/
+
+# you may optionally change the following settings
+#   switch this to true if you want a lot of debug output
+verbose=false
+#   switch this to TRAIN if you also want to train the model
+cliMode=TEST
+#   switch this on to cache CoreNLP output in a file
+cacheParses=true
+#   switch off if you want all outputs in one file
+oneFilePerInput=false
+
+# the following settings need to remain unchanged
+# Training options
+modelForTextFileMode=GREEDY
+quotationTypes=DIM
+jackknifing=false
+outerIter=30
+innerIter=50
+predictionIter=1000
+maxNumTrials=10
+predictEvery=10
+maxCueDistanceSampling=30
+maxCueDistanceHeuristic=30
+maxLengthSampling=75
+maxLengthHeuristic=50
+cueMargin=25.0
+beginMargin=25.0
+endMargin=25.0
+samplerMarginPositive=15
+cueTemperature=10.0
+beginTemperature=10.0
+endTemperature=10.0
+useGoldPreprocessing=true
+
+# Paths
+inputDirectory=*NOT USED IN EXPERIMENT MODE*
+crfModelFile=resources/PARC/models/acl2016.goldtok.crfmodel
+perceptronModelFile=resources/PARC/models/acl2016.goldtok.models
+
+# Features
+dependencyParentRelHead=true
+constituentLevel=true
+lexicalLemma=false
+sentenceHasQuote=true
+constituentBinningStacked=false
+sentenceHasCue=false
+sentenceLength=true
+dependencyChildRel=true
+lexicalPos=false
+sentenceLengthBinningStacked=false
+dependencyChildRelHead=true
+constituentParent=true
+dependencyFeatures=true
+lexicalWindowSize=5
+documentQuotationFeature=true
+sentenceHasNe=true
+samplerMarginNegative=1
+constituentLeftmost=true
+flattenQuotes=true
+useBioeTags=true
+constituentAncestorL=true
+sentenceHasPronoun=true
+lexicalToken=false
+sentenceLengthBinning=false
+dependencyCueDependent=true
+constituentGoverning=true
+constituentBinning=false
+dependencyParentRel=true
+constituentFeatures=true
+lexicalBigram=false
+documentOffsetConjunction=true
+

@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>QSample</name>
+  <groupId>ims.cs</groupId>
+  <artifactId>qsample</artifactId>
+  <version>0.1</version>
+  <inceptionYear>2016</inceptionYear>
+  <properties>
+    <java.version>1.7</java.version>
+    <junit.version>4.10</junit.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <organization>
+    <name>IMS, University of Stuttgart, Germany</name>
+    <url>http://www.ims.uni-stuttgart.de/~scheibcn</url>
+  </organization>
+
+  
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.stanford.nlp</groupId>
+      <artifactId>stanford-corenlp</artifactId>
+      <version>3.4.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.stanford.nlp</groupId>
+      <artifactId>stanford-corenlp</artifactId>
+      <version>3.4.1</version>
+      <classifier>models</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>cc.mallet</groupId>
+      <artifactId>mallet</artifactId>
+      <version>2.0.7</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.0</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>net.sf.jgrapht</groupId>
+      <artifactId>jgrapht</artifactId>
+      <version>0.8.3</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <plugins>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.5.1</version>
+            <configuration>
+              <source>1.7</source>
+              <target>1.7</target>
+            </configuration>
+        </plugin>
+
+
+      <!-- Assembles the jar and other release formats (tarball, etc.). -->
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.6</version>
+          <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attached</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+	  <archive>
+	    <manifest>
+	      <mainClass>ims.cs.qsample.run.QSample</mainClass>
+	    </manifest>
+	  </archive>
+	  <descriptorRefs>
+	    <descriptorRef>jar-with-dependencies</descriptorRef>
+	  </descriptorRefs>
+        </configuration>
+      </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.0.0</version>
+            <executions>
+                <execution>
+                    <id>make-assembly</id>
+                    <phase>package</phase>
+                </execution>
+            </executions>
+            <configuration>
+                <excludes>
+                    <exclude>**/log4j.properties</exclude>
+                </excludes>
+                <archive>
+                    <manifest>
+                        <mainClass>ims.cs.qsample.run.QSample</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+        
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <!-- During release:perform, enable the "release" profile -->
+          <releaseProfiles>release</releaseProfiles>
+          <goals>deploy package</goals>
+        </configuration>
+      </plugin>
+      
+    </plugins>
+  </build>
+</project>
