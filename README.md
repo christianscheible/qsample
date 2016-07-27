@@ -9,13 +9,17 @@ Requirements
 ------------
 
 Java JVM (>= 1.7) and Maven (>= 3.0.0) need to be installed. All other
-dependencies will be downloaded automatically.
+dependencies will be downloaded automatically. The dependencies all
+together will amount to ~250 MB. The trained model files take up another
+~80 MB.
 
 
 Setup
 --------
 
-Install the tool by running the following commands:
+Install the tool by running the following commands (NOTE: this will trigger a
+**~250 MB** Maven dependency download and will produce a .jar file of
+comparable size):
 
 	git clone https://github.com/christianscheible/qsample.git
 	cd qsample
@@ -25,7 +29,7 @@ Install the tool by running the following commands:
 If the build was successful, you will find two .jar files in `target/`
 (with and without dependencies, respectively).
 
-Next, download and unpack the pre-trained models:
+Next, download and unpack the pre-trained models (**~80 MB**):
 
 	wget https://github.com/christianscheible/qsample/releases/download/0.1/models.tar.gz
 	tar xzfv models.tar.gz
@@ -34,13 +38,22 @@ Next, download and unpack the pre-trained models:
 Usage
 -----
 
-Now we are ready to detect quotations. The following line runs the tool
-on some example documents (plain text, one document per file):
+Now we are ready to detect quotations. As a first step, you can run the
+tool on the example documents we provide in `example/documents`. The
+expected format is a directory of plain text files, each containing a
+single document. To process the documents, run the following command:
 
 	java -jar target/qsample-0.1-jar-with-dependencies.jar --sample example/documents/ output
 
-The result of this command is a BIOE-style labeling which you can find
-in the `output` directory. For example, in the following snippet,
+QSample will write produce several files in the output directory:
+
+* `.log` file storing the messages that were also output to command line
+* `.conf` file documenting the configuration used by the tool
+* one `.quotations.gz` file for each document in the input directory
+  containing the detected quotations
+
+The `.quotations.gz` files contain BIOE-style labels. As an example, in
+the following snippet,
 
 	Witnesses       O       O
 	said            O       C
