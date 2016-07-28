@@ -5,6 +5,17 @@ QSample is a natural language processing tool for automatically
 detecting quotations in text.
 
 
+**Example:** In the sentence
+
+> Witnesses said that several passengers have broken bones.
+
+the span
+
+> *that several passengers have broken bones*
+
+is a quotation.
+
+
 Requirements
 ------------
 
