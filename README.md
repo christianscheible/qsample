@@ -56,7 +56,7 @@ single document. To process the documents, run the following command:
 
 	java -jar target/qsample-0.1-jar-with-dependencies.jar --sample example/documents/ output
 
-QSample will write produce several files in the output directory:
+QSample will produce several files in the output directory:
 
 * `.log` file storing the messages that were also output to command line
 * `.conf` file documenting the configuration used by the tool
@@ -78,6 +78,30 @@ the following snippet,
 	
 the label `C` marks the occurrence of a *cue*, and all words between the
 `B` and `E` tag are the *content* of the quotation.
+
+
+Data
+----
+
+This repository includes the following data:
+
+* `example/documents`: Three news articles from WikiNews for
+  testing. QSample expects one plain text document per file. You can
+  mark paragraph boundaries in the text by adding an empty line after
+  each paragraph. Knowledge about paragraphs is useful for detecting
+  quotations. Linguistic pre-processing is performed by Stanford
+  CoreNLP.
+* `resources/PARC/configs`: Configuration files for running experiments
+  (see below). The `acl2016*` configurations use gold pre-processing,
+  whereas the `predpipeline*` configurations use CoreNLP processing. For
+  each setup, we supply one file for each of the methods used in the
+  paper.
+* `resources/PARC/listfeatures`: Word lists for extracting features. We
+  supply lists of attribution nouns and verbs, organizations and
+  persons, titles, as well as a mapping of verbs to VerbNet
+  classes. These lists were generated from third-party resources, see
+  `licenses/LICENSE.md`.
+* `resources/news.txt`: A list of WSJ ID's that contain news documents.
 
 
 Running an experiment

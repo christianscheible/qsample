@@ -13,6 +13,7 @@ hs_err_pid*
 
 # model binaries
 resources/PARC/models/*
+models.tar.gz
 
 # local configuration files
 resources/PARC/configs/local/
