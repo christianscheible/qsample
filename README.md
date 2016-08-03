@@ -59,7 +59,7 @@ single document. To process the documents, run the following command:
 QSample will produce several files in the output directory:
 
 * `.log` file storing the messages that were also output to command line
-* `.conf` file documenting the configuration used by the tool
+* `.conf` file documenting the configuration used by the tool for this run
 * one `.quotations.gz` file for each document in the input directory
   containing the detected quotations
 
@@ -123,18 +123,20 @@ simply switch from `TEST` to `TRAIN` mode in the configuration.
 More information
 ----------------
 
-For more information, refer to our paper (also available at
+For more information, refer to our paper (available at
 http://www.aclweb.org/anthology/P/P16/P16-1164.pdf):
 
 	@InProceedings{scheibleklingerpado2016,
 		author    = {Scheible, Christian and Klinger, Roman and Pad\'{o}, Sebastian},
 		title     = {Model Architectures for Quotation Detection},
 		booktitle = {Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics},
+		pages     = {1736-1745},
 		year      = {2016}
 	}
 
 	
-or have a look at the website at http://www.ims.uni-stuttgart.de/data/qsample
+or check the tool's website at
+http://www.ims.uni-stuttgart.de/data/qsample for news.
 
 
 License
