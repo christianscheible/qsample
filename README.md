@@ -123,7 +123,8 @@ simply switch from `TEST` to `TRAIN` mode in the configuration.
 More information
 ----------------
 
-For more information, refer to our paper
+For more information, refer to our paper (also available at
+http://www.aclweb.org/anthology/P/P16/P16-1164.pdf):
 
 	@InProceedings{scheibleklingerpado2016,
 		author    = {Scheible, Christian and Klinger, Roman and Pad\'{o}, Sebastian},
