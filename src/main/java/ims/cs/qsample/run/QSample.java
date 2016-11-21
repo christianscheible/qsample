@@ -150,7 +150,7 @@ public class QSample {
 
         // set up logging
         NewStaticPrinter.isOn = false;
-        String logFileName = NewStaticPrinter.getLogFileName(StaticConfig.outputDirectory + "/qsample-");
+        String logFileName = NewStaticPrinter.getLogFileName(Common.pathConcat(StaticConfig.outputDirectory, "qsample-"));
         MultiOutputStream.init(logFileName);
         NewStaticPrinter.init(logFileName);
 

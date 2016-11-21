@@ -181,7 +181,7 @@ public class RunPerceptronSampler {
      * @throws ParserConfigurationException
      */
     public static void main(String[] args) throws IOException, ClassNotFoundException, SAXException, ParserConfigurationException {
-        String logFileName = NewStaticPrinter.getLogFileName(StaticConfig.outputDirectory + "/perceptronsampler-");
+        String logFileName = NewStaticPrinter.getLogFileName(Common.pathConcat(StaticConfig.outputDirectory, "perceptronsampler-"));
         MultiOutputStream.init(logFileName);
         NewStaticPrinter.init(logFileName);
 

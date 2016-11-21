@@ -97,4 +97,9 @@ public abstract class Common {
         }
     }
 
+    public static String pathConcat (String path, String subDir) {
+        return new File(new File(path), subDir).toString();
+    }
+
+
 }

@@ -119,7 +119,7 @@ public class RunCrf {
      * @throws IOException
      */
     public static void main(String[] args) throws ClassNotFoundException, SAXException, ParserConfigurationException, IOException {
-        String logFileName = NewStaticPrinter.getLogFileName(StaticConfig.outputDirectory + "/crf-");
+        String logFileName = NewStaticPrinter.getLogFileName(Common.pathConcat(StaticConfig.outputDirectory, "crf-"));
         NewStaticPrinter.init(logFileName);
         MultiOutputStream.init(logFileName);
 
