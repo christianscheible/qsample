@@ -92,6 +92,11 @@ public abstract class ParcUtils {
 		String documentText = document.text;
 		Iterator<Token> tokenIter = document.tokenList.iterator();
 
+		if (!tokenIter.hasNext()) {
+			System.err.println("Skipping paragraph annotation empty document: " + document.docId);
+			return;
+		}
+
 		Token token = tokenIter.next();
 		ByteCount bc = token.goldByteCount;
 
