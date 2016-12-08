@@ -51,6 +51,7 @@ public class Token {
 	// predicted information
 	public String predLemma;
 	public String predText;
+	public String originalPredText;
 	public String predPosTag;
 	public int predPosition;
 	public int predSentencePosition;

@@ -158,7 +158,9 @@ public class ProcessedCorpus {
                     bioLabelPred = "C";
                 }
 
-                writer.println(token.predText + "\t" + token.contentBIOAnnotationGold + "\t" + bioLabelPred);
+                String text = token.originalPredText != null ? token.originalPredText : token.predText;
+
+                writer.println(text + "\t" + token.contentBIOAnnotationGold + "\t" + bioLabelPred);
                 if (newLineAtSentenceEnd && token.endsSentence()) writer.println();
             }
         }

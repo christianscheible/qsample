@@ -130,6 +130,7 @@ public abstract class ParcUtils {
 		for (Token token: document.getTokenList()) {
 			if (token.predNer.startsWith("ORGANIZATION") || token.predNer.startsWith("PERSON")) {
 				String substText = "[NE]";
+				token.originalPredText = token.predText;
 
 				token.predLemma = substText;
 				token.predText = substText;
