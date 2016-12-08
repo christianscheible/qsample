@@ -160,7 +160,8 @@ public class ProcessedCorpus {
 
                 String text = token.originalPredText != null ? token.originalPredText : token.predText;
 
-                writer.println(text + "\t" + token.contentBIOAnnotationGold + "\t" + bioLabelPred);
+                writer.println(text + "\t" + token.predByteCount.begin + "\t" + token.predByteCount.end + "\t"
+                        + token.contentBIOAnnotationGold + "\t" + bioLabelPred);
                 if (newLineAtSentenceEnd && token.endsSentence()) writer.println();
             }
         }

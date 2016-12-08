@@ -63,21 +63,26 @@ QSample will produce several files in the output directory:
 * one `.quotations.gz` file for each document in the input directory
   containing the detected quotations
 
-The `.quotations.gz` files contain BIOE-style labels. As an example, in
-the following snippet,
+The `.quotations.gz` files contain the predictions made by the model. As
+an example, take the following snippet:
 
-	Witnesses       O       O
-	said            O       C
-	that            O       B
-	several         O       I
-	passengers      O       I
-	have            O       I
-	broken          O       I
-	bones           O       E
-	.               O       O
+	Witnesses       230     239     O       O
+	said            240     244     O       C
+	that            245     249     O       B
+	several         250     257     O       I
+	passengers      258     268     O       I
+	have            269     273     O       I
+	broken          274     280     O       I
+	bones           281     286     O       E
+	.               286     287     O       O
 	
-the label `C` marks the occurrence of a *cue*, and all words between the
-`B` and `E` tag are the *content* of the quotation.
+The output format consists of five columns. The first column contains
+the tokens; the second contains the byte offsets of the tokens in the
+original input file; the third column contains the gold labels (if there
+are any); the fourth column contains the predicted quotes. The
+predictions are encoded using BIOE-style labels. The label `C` marks the
+occurrence of a *cue*, and all words between the `B` (begin) and `E`
+(end) tag are the *content* of the quotation.
 
 
 Data

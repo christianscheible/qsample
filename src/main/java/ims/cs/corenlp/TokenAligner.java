@@ -18,6 +18,7 @@ package ims.cs.corenlp;
 
 import java.util.*;
 
+import ims.cs.lingdata.ByteCount;
 import ims.cs.lingdata.Sentence;
 import ims.cs.lingdata.Token;
 import ims.cs.lingdata.SentenceId;
@@ -200,6 +201,7 @@ public class TokenAligner {
 		combined.predPosTag = cl.tag();
 		combined.predSentencePosition = currentCoreNlpSentenceIndex;
 		combined.predNer = Helper.translateNer(cl.ner());
+		combined.predByteCount = new ByteCount(cl.beginPosition(), cl.endPosition());
 		return combined;
 	}
 
@@ -218,6 +220,7 @@ public class TokenAligner {
 		combined.predPosTag = tok.goldPosTag;
 		combined.predNer = tok.goldNer;
 		combined.predSentencePosition = currentCoreNlpSentenceIndex;
+		combined.predByteCount = new ByteCount(cl.beginPosition(), cl.endPosition());
 		return combined;
 	}
 

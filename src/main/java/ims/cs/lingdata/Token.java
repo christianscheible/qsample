@@ -38,7 +38,6 @@ import ims.cs.qsample.spans.Span;
 public class Token {
 	public enum Property {POS, TEXT, LEMMA, GOLDLABEL};
 	
-	public ByteCount goldByteCount;
 
 	// gold information
 	public String goldLemma;
@@ -47,7 +46,9 @@ public class Token {
 	public String goldNer;
 	public int goldPosition;
 	public int goldSentencePosition;
-	
+	public ByteCount goldByteCount;
+
+
 	// predicted information
 	public String predLemma;
 	public String predText;
@@ -57,6 +58,7 @@ public class Token {
 	public int predSentencePosition;
 	public String predNer;
 	public boolean isPredictedCue;
+	public ByteCount predByteCount;
 
 	// features
 	public FeatureSet featureSet;
