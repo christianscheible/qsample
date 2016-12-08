@@ -77,12 +77,13 @@ an example, take the following snippet:
 	.               286     287     O       O
 	
 The output format consists of five columns. The first column contains
-the tokens; the second contains the byte offsets of the tokens in the
-original input file; the third column contains the gold labels (if there
-are any); the fourth column contains the predicted quotes. The
-predictions are encoded using BIOE-style labels. The label `C` marks the
-occurrence of a *cue*, and all words between the `B` (begin) and `E`
-(end) tag are the *content* of the quotation.
+the tokens; the second and third columns contains the byte begin and end
+positions of the tokens in the original input file; the fourth column
+contains the gold labels (if there are any); the fifth column contains
+the predicted quotes. The predictions are encoded using BIOE-style
+labels. The label `C` marks the occurrence of a *cue*, and all words
+between the `B` (begin) and `E` (end) tag are the *content* of the
+quotation.
 
 
 Data
