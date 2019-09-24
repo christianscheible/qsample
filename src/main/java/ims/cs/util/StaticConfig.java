@@ -17,10 +17,7 @@
 
 package ims.cs.util;
 
-import sun.applet.Main;
-
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Field;
