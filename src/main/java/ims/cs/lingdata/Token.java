@@ -86,7 +86,7 @@ public class Token {
 	// CoreNlp compatibility
 	public IndexedWord dependencyBackpointer;
 	public Tree treeBackpointer;
-	public TreeGraphNode tgn;
+	public IndexedWord tgn;
 
 	// perceptron stuff
 	public double perceptronBeginScore;

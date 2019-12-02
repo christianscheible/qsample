@@ -266,7 +266,7 @@ public class TokenAligner {
 
 		// for compatibility: TreeGraphNode bookkeeping
 		Collection<TypedDependency> dependencyEdges = dependencies.typedDependencies();
-		List<TreeGraphNode> tgnList = new ArrayList<TreeGraphNode>(cTokens.size());
+		List<IndexedWord> tgnList = new ArrayList<>(cTokens.size());
 
 		for (int i = 0; i < cTokens.size()+1; i++)
 			tgnList.add(null);
@@ -277,12 +277,12 @@ public class TokenAligner {
 			tgnList.set(edge.dep().index(), edge.dep());
 		}
 
-		Iterator<TreeGraphNode> tgnIterator = tgnList.iterator();
+		Iterator<IndexedWord> tgnIterator = tgnList.iterator();
 
 
 		IndexedWord dep = null;
 		Tree leaf = null;
-		TreeGraphNode tgn = null;
+		IndexedWord tgn = null;
 
 
 
